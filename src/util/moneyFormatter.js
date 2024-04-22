@@ -1,4 +1,4 @@
-export default function MoneyFormatter(props) {
+export default function moneyFormatter(props) {
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",

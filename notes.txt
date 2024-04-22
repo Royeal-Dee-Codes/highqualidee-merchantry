@@ -1,0 +1,6 @@
+scss to lowercase
+navbar into seperate component
+remove the login
+finish icons in footer
+review todo list : refactor Products page to match
+take 1 off of IndividualProduct page

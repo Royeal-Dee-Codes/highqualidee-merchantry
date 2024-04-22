@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartProvider";
-import MoneyFormatter from "../MoneyFormatter";
-import "../styles/Products.scss";
+import moneyFormatter from "../../util/moneyFormatter";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -64,6 +63,7 @@ export default function Products() {
       </div>
 
       <div className="container-for-all-products">
+        {console.log(products)}
         {products.map((product) => (
           <div className="product" key={product.id}>
             <img
@@ -73,9 +73,7 @@ export default function Products() {
             />
 
             <div className="product-description-container">
-              <h2 className="product-price">
-                <MoneyFormatter price={product.price} />
-              </h2>
+              <h2 className="product-price">{moneyFormatter(product.price)}</h2>
               <h4 className="product-name">{product.title}</h4>
               <h5 className="product-description">
                 {product.description.slice(0, 50) + "..."}

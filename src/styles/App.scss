@@ -1,35 +1,16 @@
+* {
+  box-sizing: border-box;
+  color: #ff91af;
+}
+
+body {
+  margin-bottom: 20px;
+  background-color: #3b0005;
+  margin: auto;
+  overflow-x: hidden;
+}
+
 .app {
   overflow: hidden;
-}
-.navbar {
-  z-index: 2;
-  position: sticky;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   width: 100%;
-  background-color: #1a0001;
-  padding: 10px;
-  font-size: 1.43rem;
-
-  .navlink {
-    align-items: center;
-    text-decoration: none;
-    color: #ff91af;
-  }
-
-  .navlink:hover {
-    color: #a74262;
-  }
-}
-
-.footer {
-  width: 100%;
-  justify-content: center;
-  padding-top: 5px;
-  display: flex;
-  align-items: center;
-  background-color: #1a0001;
-  color: #ff91af;
 }
