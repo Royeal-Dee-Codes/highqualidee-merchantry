@@ -36,7 +36,7 @@
 
 .login-input {
   display: flex;
-  background-color: #1a0001;
+  background-color: $primary-dark;
 }
 
 p {
@@ -44,15 +44,12 @@ p {
 }
 
 .footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-center-column;
   width: 100%;
-  justify-content: center;
   text-align: center;
   padding-top: 5px;
-  background-color: #1a0001;
-  color: #ff91af;
+  background-color: $primary-dark;
+  color: $baker-miller-pink;
 }
 
 .icon-container {
@@ -62,6 +59,6 @@ p {
   width: 15rem;
 }
 
-.icon:hover {
-  color: #c45c7b;
+.icon a:hover {
+  color: $secondary-light;
 }

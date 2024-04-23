@@ -1,17 +1,17 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import CartProvider from "./context/CartProvider";
-import Navbar from "../src/components/navigation/Navbar";
-import Footer from "../src/components/navigation/Footer";
+import Navbar from "./components/navigation/Navbar";
+import Footer from "./components/navigation/Footer";
 import Products from "./components/pages/Products";
 import IndividualProduct from "./components/pages/IndividualProduct";
-import Cart from "../src/components/pages/Cart";
-import Contact from "../src/components/pages/Contact";
-import About from "../src/components/pages/About";
-import Home from "../src/components/pages/Home";
-import icons from "../src/helpers/icons";
+import Cart from "./components/pages/Cart";
+import Contact from "./components/pages/Contact";
+import About from "./components/pages/About";
+import Home from "./components/pages/Home";
+import icons from "./helpers/icons";
 
-import "../src/styles/Main.scss";
+import "../src/styles/app.scss";
 
 icons();
 

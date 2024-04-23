@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartProvider";
 import MoneyFormatter from "../../util/moneyFormatter";
-import "../../styles/Cart.scss";
 
 export default function Cart() {
   const { cart, clearCart, removeProduct } = useContext(CartContext);

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../../styles/Home.scss";
 import image from "../../assests/images/anders-jilden-AkUR27wtaxs-unsplash.jpg";
 
 export default function Home() {
