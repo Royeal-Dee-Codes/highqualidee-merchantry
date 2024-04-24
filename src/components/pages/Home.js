@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import image from "../../assests/images/anders-jilden-AkUR27wtaxs-unsplash.jpg";
+import "../../styles/app.scss";
 
 export default function Home() {
   const [product, setProduct] = useState([]);

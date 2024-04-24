@@ -1,16 +1,13 @@
 .products-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background-color: #3b0005;
+  @include flex-center-column;
+  background-color: $secondary-dark;
   margin-bottom: 7%;
 }
 
 .header {
   margin-top: 7%;
   margin-bottom: 11vh;
-  color: #ff91af;
+  color: $baker-miller-pink;
   display: flex;
   justify-content: center;
   text-shadow: 3px 3px 9px rgb(26 0 1 / 100%);
@@ -23,22 +20,22 @@
 }
 
 .filter-btns {
-  background-color: #c45c7b;
-  color: #1a0001;
+  background-color: $secondary-light;
+  color: $primary-dark;
   font-size: 1rem;
   border: none;
   margin: 0px 2vw 0px 5vw;
   padding: 0.5vw 1vw;
   border-radius: 5px;
-  box-shadow: 3px 3px 9px rgb(26 0 1 / 100%);
+  @include dark-drop-shadow;
 }
 
 .filter-btns:hover {
-  color: #c45c7b;
-  background-color: #1a0001;
+  color: $secondary-light;
+  background-color: $primary-dark;
   border: none;
   cursor: pointer;
-  box-shadow: 3px 3px 9px rgb(255 145 175 / 100%);
+  @include light-drop-shadow;
 }
 
 .container-for-all-products {
@@ -56,10 +53,10 @@
   justify-content: flex-end;
   align-items: center;
   width: 40vw;
-  border: 1px solid #c45c7b;
+  border: 1px solid $secondary-light;
   border-radius: 11px;
   background-color: white;
-  box-shadow: 3px 3px 9px rgb(255 145 175 / 100%);
+  @include light-drop-shadow;
 }
 
 .product-image {
@@ -71,9 +68,9 @@
   text-align: center;
   border-radius: 11px 11px 11px 11px;
   width: 40vw;
-  background-color: #53001f;
-  color: #1a0001;
-  filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.5));
+  background-color: $primary-medium;
+  color: $primary-dark;
+  @include dark-drop-shadow;
   font-size: 1rem;
 }
 
@@ -83,23 +80,23 @@
 }
 
 .add-to-cart-btn {
-  color: #ff91af;
-  background-color: #3b0005;
+  color: $baker-miller-pink;
+  background-color: $secondary-dark;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
   margin-bottom: 1.5vh;
-  filter: drop-shadow(0 0.2rem 0.2rem rgb(255 145 175 / 50%));
+  @include medium-drop-shadow;
 }
 
 .add-to-cart-btn:hover {
-  color: #1a0001;
-  background-color: #ff91af;
-  filter: drop-shadow(0 0.2rem 0.2rem rgb(26 0 1 / 100%));
+  color: $primary-dark;
+  background-color: $baker-miller-pink;
+  @include dark-drop-shadow;
   cursor: pointer;
 }
 
 .product-link {
   font-style: none;
-  color: #6f0434;
+  color: $primary-light;
 }

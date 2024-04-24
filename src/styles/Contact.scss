@@ -22,7 +22,7 @@
       margin-bottom: 15px;
 
       label {
-        color: #3b0005;
+        color: $secondary-dark;
         display: block;
         margin-bottom: 5px;
       }
@@ -30,7 +30,7 @@
       input[type="text"],
       input[type="email"],
       textarea {
-        color: #3b0005;
+        color: $secondary-dark;
         width: 100%;
         padding: 10px;
         font-size: 16px;
@@ -41,8 +41,8 @@
     }
 
     button[type="submit"] {
-      background-color: #ff91af;
-      color: #3b0005;
+      background-color: $baker-miller-pink;
+      color: $secondary-dark;
       border: none;
       padding: 10px 20px;
       font-size: 16px;
@@ -51,13 +51,13 @@
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: #6f0434;
-        color: #ff91af;
+        background-color: $primary-light;
+        color: $baker-miller-pink;
       }
     }
 
     .popup {
-      background-color: rgba(111, 4, 52, 0.8);
+      background-color: $primary-medium;
       padding: 10px;
       border-radius: 5px;
       position: fixed;
