@@ -41,15 +41,16 @@ p {
   padding-top: 5px;
   background-color: $primary-dark;
   color: $baker-miller-pink;
-}
-
-.icon-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 15rem;
-}
-
-.icon a:hover {
-  color: $secondary-light;
+  .icon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 15rem;
+    a {
+      color: $baker-miller-pink;
+    }
+    a:hover {
+      color: $secondary-light;
+    }
+  }
 }
