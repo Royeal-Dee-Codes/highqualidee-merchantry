@@ -1,3 +1,5 @@
+import "../../styles/app.scss";
+
 const About = () => {
   return (
     <div
@@ -57,6 +59,36 @@ const About = () => {
                 Self and my goal is to develop a better understanding of the
                 fundamentals and to become a better programmer."
               </p>
+            </p>
+          </div>
+
+          <div className="capstone-process">
+            <h3>Explain the Process of your Capstone</h3>
+            <p>
+              I decided to keep working on my fist Capstone and do some major
+              refactoring and improvements. I am still in the process of
+              refactoring. There are many things I still need to fix.{" "}
+            </p>
+          </div>
+          <div className="course-struggles">
+            <h3>
+              Explain struggles you experienced throughout the frontend course
+              and how you solved them.
+            </h3>
+            <p>
+              I am very grateful to have been able to retake the frontend
+              course. It did help me fill in a lot of the holes in my Swiss
+              Cheese knowledge and further develop me skill and understanding. I
+              plan on continuing working on my projects and improving them for
+              my portfolio.
+            </p>
+          </div>
+          <div className="favorite-language">
+            <h3>Explain your favorite language and why.</h3>
+            <p>
+              With time I have found that I do like the languages we use in the
+              Dev Shop like python, javascript, html and I am getting better
+              with scss and styling.{" "}
             </p>
           </div>
         </div>

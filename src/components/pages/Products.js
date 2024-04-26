@@ -7,7 +7,6 @@ export default function Products() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("all");
   const { addProduct, cart } = useContext(CartContext);
-  // const formatter = MoneyFormatter;
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -37,6 +36,28 @@ export default function Products() {
     setSearchTerm(category);
   };
 
+  const handleAddToCart = (product) => {
+    addProduct(product);
+  };
+
+  const handleAddQuantity = (productId) => {
+    const updatedProducts = products.map((product) =>
+      product.id === productId
+        ? { ...product, quantity: product.quantity + 1 }
+        : product
+    );
+    setProducts(updatedProducts);
+  };
+
+  const handleSubtractQuantity = (productId) => {
+    const updatedProducts = products.map((product) =>
+      product.id === productId && product.quantity > 0
+        ? { ...product, quantity: product.quantity - 1 }
+        : product
+    );
+    setProducts(updatedProducts);
+  };
+
   return (
     <div className="products-page">
       <h1 className="header" style={{ fontSize: 70 }}>
@@ -63,7 +84,6 @@ export default function Products() {
       </div>
 
       <div className="container-for-all-products">
-        {console.log(products)}
         {products.map((product) => (
           <div className="product" key={product.id}>
             <img
@@ -82,9 +102,16 @@ export default function Products() {
               <h5 className="product-link">
                 <Link to={`/Products/${product.id}`}>See More Details</Link>
               </h5>
+              <div className="quantity-control">
+                <button onClick={() => handleSubtractQuantity(product.id)}>
+                  -
+                </button>
+                <h2>{product.quantity}</h2>
+                <button onClick={() => handleAddQuantity(product.id)}>+</button>
+              </div>
               <button
                 className="add-to-cart-btn"
-                onClick={() => addProduct(product)}
+                onClick={() => handleAddToCart(product)}
               >
                 Add to Cart
               </button>
