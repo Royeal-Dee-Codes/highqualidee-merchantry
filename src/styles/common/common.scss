@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin-bottom: 20px;
+  background-color: $secondary-dark;
+  margin: auto;
+  overflow-x: hidden;
+}
+
+.app {
+  overflow: hidden;
+  width: 100%;
+}
+
+p {
+  color: $baker-miller-pink;
+}

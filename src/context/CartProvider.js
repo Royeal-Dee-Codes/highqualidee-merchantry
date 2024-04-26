@@ -40,27 +40,6 @@ export default function CartProvider({ children }) {
       setCart((c) => [...c, { ...product }]);
     }
 
-    const cartCopy = [...cart];
-    // const exists = cartCopy.find((item) => item.id === product.id);
-
-    if (exists) {
-      const productIdx = cartCopy.findIndex((prod) => prod.id === product.id);
-      setCart(cartCopy);
-      console.log(productIdx);
-    } else {
-    }
-
-    cartCopy.forEach((item, idx) => {
-      if (item[0] === product) {
-        setExists(true);
-        cartCopy[idx][1].quantity = cartCopy[idx][1].quantity + 1;
-      }
-    });
-
-    if (exists) {
-    } else {
-      setCart((c) => [...c, [product, { quantity: 1 }]]);
-    }
     return console.log("addProduct");
   };
 
@@ -68,7 +47,7 @@ export default function CartProvider({ children }) {
     setCart((c) => c.filter((item) => item.id !== id));
 
     if (window.confirm("Delete from cart?")) {
-      setCart([]);
+      setCart((c) => c.filter((item) => item.id !== id));
     }
   }
 

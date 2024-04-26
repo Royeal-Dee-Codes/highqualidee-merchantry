@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "../../styles/IndividualProduct.scss";
 import { CartData } from "../../context/CartProvider";
-import MoneyFormatter from "../MoneyFormatter";
+import moneyFormatter from "../../util/moneyFormatter";
 
-export default function IndividualProduct() {
+export default function IndividualProduct(props) {
   const { addProduct } = CartData();
-  const formatter = MoneyFormatter;
+  const formatter = moneyFormatter;
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/1`)
+    fetch(`https://fakestoreapi.com/products/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);

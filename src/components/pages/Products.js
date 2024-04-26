@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartProvider";
-import MoneyFormatter from "../MoneyFormatter";
-import "../styles/Products.scss";
+import moneyFormatter from "../../util/moneyFormatter";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("all");
   const { addProduct, cart } = useContext(CartContext);
-  // const formatter = MoneyFormatter;
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -36,6 +34,28 @@ export default function Products() {
 
   const handleFilterClick = (category) => {
     setSearchTerm(category);
+  };
+
+  const handleAddToCart = (product) => {
+    addProduct(product);
+  };
+
+  const handleAddQuantity = (productId) => {
+    const updatedProducts = products.map((product) =>
+      product.id === productId
+        ? { ...product, quantity: product.quantity + 1 }
+        : product
+    );
+    setProducts(updatedProducts);
+  };
+
+  const handleSubtractQuantity = (productId) => {
+    const updatedProducts = products.map((product) =>
+      product.id === productId && product.quantity > 0
+        ? { ...product, quantity: product.quantity - 1 }
+        : product
+    );
+    setProducts(updatedProducts);
   };
 
   return (
@@ -73,9 +93,7 @@ export default function Products() {
             />
 
             <div className="product-description-container">
-              <h2 className="product-price">
-                <MoneyFormatter price={product.price} />
-              </h2>
+              <h2 className="product-price">{moneyFormatter(product.price)}</h2>
               <h4 className="product-name">{product.title}</h4>
               <h5 className="product-description">
                 {product.description.slice(0, 50) + "..."}
@@ -84,9 +102,16 @@ export default function Products() {
               <h5 className="product-link">
                 <Link to={`/Products/${product.id}`}>See More Details</Link>
               </h5>
+              <div className="quantity-control">
+                <button onClick={() => handleSubtractQuantity(product.id)}>
+                  -
+                </button>
+                <h2>{product.quantity}</h2>
+                <button onClick={() => handleAddQuantity(product.id)}>+</button>
+              </div>
               <button
                 className="add-to-cart-btn"
-                onClick={() => addProduct(product)}
+                onClick={() => handleAddToCart(product)}
               >
                 Add to Cart
               </button>

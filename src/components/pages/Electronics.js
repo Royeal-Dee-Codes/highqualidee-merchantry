@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "..//..//styles/main.css";
+import "../../styles/common/app.scss";
 
 export default function Women() {
   const [electronics, setElectronics] = useState([]);

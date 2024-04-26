@@ -1,0 +1,24 @@
+@mixin light-drop-shadow {
+  filter: drop-shadow(0 0.2rem 0.2rem rgb(255 145 174 / 80%));
+}
+
+@mixin medium-drop-shadow {
+  filter: drop-shadow(0 0.2rem 0.2rem rgb(255 145 175 / 50%));
+}
+
+@mixin dark-drop-shadow {
+  filter: drop-shadow(0 0.3rem 0.3rem rgb(26 0 1 / 100%));
+}
+
+@mixin flex-center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin background-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
